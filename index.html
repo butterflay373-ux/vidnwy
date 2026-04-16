@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Group Gift</title>
+  
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: white;
+      align-items: center;
+    }
+
+    header h2 {
+      color: #ff4da6;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #0066ff;
+      color: white;
+    }
+
+    .btn-outline {
+      border: 1px solid #0066ff;
+      color: #0066ff;
+      background: transparent;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #666;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .hero .actions {
+      margin-top: 20px;
+    }
+
+    /* VIDEO SECTION */
+    .video-section {
+      padding: 30px;
+      overflow-x: auto;
+      display: flex;
+      gap: 20px;
+    }
+
+    .video-card {
+      min-width: 180px;
+      height: 320px;
+      border-radius: 15px;
+      background: #ddd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      padding: 10px;
+      color: white;
+    }
+
+    /* CARA KERJA */
+    .steps {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .step-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .step {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* CTA */
+    .cta {
+      margin: 40px;
+      padding: 30px;
+      background: white;
+      text-align: center;
+      border-radius: 15px;
+    }
+.video-card {
+  position: relative;
+  width: 180px;
+  height: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+.contoh {
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.contoh h2 {
+  margin-bottom: 10px;
+}
+
+.contoh p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contoh-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.card {
+  min-width: 240px;
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.thumb {
+  position: relative;
+  height: 140px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h4 {
+  margin: 10px 0 5px;
+}
+
+.card span {
+  font-size: 13px;
+  color: #777;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>vidday</h2>
+  <div>
+    <button class="btn btn-outline">Masuk</button>
+    <button class="btn btn-primary">Mulai</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Membuat Hadiah Video Grup Menjadi Mudah</h1>
+  <p>Semua orang dapat menambahkan pesan video dengan satu tautan.</p>
+  
+  <div class="actions">
+    <button class="btn btn-outline">Pelajari</button>
+    <button class="btn btn-primary">Mulai Gratis</button>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+
+<div class="video-card">
+  <video id="vid1" src="vidio 1.mp4" preload="metadata"></video>
+  <div class="play-btn" id="btn-vid1" onclick="toggleVideo('vid1')">▶</div>
+</div>
+
+
+<div class="video-card">
+  <video id="vid2" src="vidio2.mp4" preload="metadata"></video>
+  <div class="play-btn" id="btn-vid2" onclick="toggleVideo('vid2')">▶</div>
+</div>
+
+<div class="video-card">
+  <video id="vid2" src="cobaa.mkv" preload="metadata"></video>
+  <div class="play-btn" id="btn-vid2" onclick="toggleVideo('vid2')">▶</div>
+</div>
+
+<div class="video-card">
+  <video id="vid2" src="cobaa.mkv" preload="metadata"></video>
+  <div class="play-btn" id="btn-vid2" onclick="toggleVideo('vid2')">▶</div>
+</div>
+
+<script>
+function toggleVideo(id) {
+  const video = document.getElementById(id);
+  const button = document.getElementById("btn-" + id);
+
+  if (video.paused) {
+    video.play();
+    button.style.display = "none";
+  } else {
+    video.pause();
+    button.style.display = "flex";
+  }
+
+  video.onpause = function () {
+    button.style.display = "flex";
+  };
+
+  video.onended = function () {
+    button.style.display = "flex";
+  };
+
+  video.onclick = function () {
+    if (!video.paused) {
+      video.pause();
+    }
+  };
+}
+</script>
+
+</script>
+
+
+
+</section>
+
+<!-- CARA KERJA -->
+<section class="steps">
+  <h2>Cara Kerja VidDay</h2>
+
+  <div class="step-container">
+    
+    <div class="step">
+      <h3>1. Undang Teman</h3>
+      <p>Kirim link agar teman bisa upload video</p>
+    </div>
+
+    <div class="step">
+      <h3>2. Kumpulkan Video</h3>
+      <p>Semua video akan terkumpul otomatis</p>
+    </div>
+
+    <div class="step">
+      <h3>3. Buat & Bagikan</h3>
+      <p>Gabungkan jadi video kenangan</p>
+    </div>
+
+  </div>
+</section>
+<section class="contoh">
+  <h2>Contoh Hadiah Video Grup</h2>
+  <p>Saksikan hadiah video grup nyata yang dibuat dari pesan video dan foto.</p>
+
+  <div class="contoh-container">
+
+    <div class="card">
+      <div class="thumb">
+        <video src="vidio 1.mp4"></video>
+        <div class="play-btn" onclick="toggleVideoCard(this)">▶</div>
+      </div>
+      <h4>Video Selamat Ulang Tahun</h4>
+      <span>Kejutan Terhebat</span>
+    </div>
+
+    <div class="card">
+      <div class="thumb">
+        <video src="vidio2.mp4"></video>
+        <div class="play-btn" onclick="toggleVideoCard(this)">▶</div>
+      </div>
+      <h4>Video Ulang Tahun</h4>
+      <span>Kenangan Bertahun-tahun</span>
+    </div>
+
+    <div class="card">
+      <div class="thumb">
+        <video src="video_lanskap_3.mp4"></video>
+        <div class="play-btn" onclick="toggleVideoCard(this)">▶</div>
+      </div>
+      <h4>Video Ulang Tahun ke-50</h4>
+      <span>Tonggak Sejarah</span>
+    </div>
+
+    <div class="card">
+      <div class="thumb">
+        <video src="video_lanskap_4.mp4"></video>
+        <div class="play-btn" onclick="toggleVideoCard(this)">▶</div>
+      </div>
+      <h4>Video Pensiun</h4>
+      <span>Karier yang Dirayakan</span>
+    </div>
+
+    <div class="card">
+      <div class="thumb">
+        <video src="video_lanskap_5.mp4"></video>
+        <div class="play-btn" onclick="toggleVideoCard(this)">▶</div>
+      </div>
+      <h4>Video Kelulusan</h4>
+      <span>Selamat untuk Wisudawan</span>
+    </div>
+
+  </div>
+</section>
+<script>
+function toggleVideoCard(btn) {
+  const card = btn.closest('.card');
+  const video = card.querySelector('video');
+
+  // pause semua video lain
+  document.querySelectorAll('video').forEach(v => {
+    if (v !== video) v.pause();
+  });
+
+  // reset semua tombol
+  document.querySelectorAll('.play-btn').forEach(b => {
+    b.style.display = "flex";
+  });
+
+  if (video.paused) {
+    video.play();
+    btn.style.display = "none";
+  } else {
+    video.pause();
+    btn.style.display = "flex";
+  }
+
+  video.onpause = () => btn.style.display = "flex";
+  video.onended = () => btn.style.display = "flex";
+}
+</script>
+<!-- CTA -->
+<section class="cta">
+  <h2>Gratis untuk Memulai</h2>
+  <button class="btn btn-primary">Mulai Sekarang</button>
+</section>
+
+<script src="https://pl29165518.profitablecpmratenetwork.com/73/fe/87/73fe8782e5ee5ac45e16ed0fed28d9fa.js"></script>
+<script async="async" data-cfasync="false" src="https://pl29165519.profitablecpmratenetwork.com/cf6852611d4b2d8a09b74b4dff03e683/invoke.js"></script>
+<div id="container-cf6852611d4b2d8a09b74b4dff03e683"></div>
+<script src="https://pl29165520.profitablecpmratenetwork.com/72/9b/d2/729bd2f647d9fd4a03ae11d0c915b629.js"></script>
+<script>
+  atOptions = {
+    'key' : '229ddb8c9cd52e9c053c0723bdfe8780',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/229ddb8c9cd52e9c053c0723bdfe8780/invoke.js"></script>
+
+
+</body>
+</html>
